@@ -32,10 +32,22 @@ class Test extends React.Component {
 
   buildProductos(){
 
-}
+  }
 
   componentDidMount(){
     this.fetchProductos()
+  }
+
+  deleteProducto(id){
+    Axios.delete('http://localhost:8090/api/productos/{id}')
+    .then(response => {
+      console.log(response);
+
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+
   }
 
   render() {
@@ -58,6 +70,9 @@ class Test extends React.Component {
             </th>
             <th>
               Precio
+            </th>
+            <th>
+              Eliminar
             </th>
           </tr>
           <ProductoList productos = {this.state.productos} />
