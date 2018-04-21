@@ -9,13 +9,14 @@ class Producto extends React.Component {
     this.state={
       id : this.props.id,
     }
+    this.deleteProducto = this.deleteProducto.bind(this)
   }
 
   deleteProducto(){
-    Axios.delete("http://localhost:8090/api/productos/"+this.state.id)
+    var id = this.state.id;
+    Axios.delete("http://localhost:8090/api/productos/"+id)
     .then(response => {
       console.log(response);
-
     })
     .catch(function (error) {
       console.log(error)

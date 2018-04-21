@@ -38,17 +38,6 @@ class Test extends React.Component {
     this.fetchProductos()
   }
 
-  deleteProducto(id){
-    Axios.delete('http://localhost:8090/api/productos/{id}')
-    .then(response => {
-      console.log(response);
-
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
-
-  }
 
   render() {
     return (

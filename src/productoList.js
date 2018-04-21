@@ -15,10 +15,7 @@ class ProductoList extends React.Component {
 
   render() {
     return (
-      
-        this.buildProductos()
-
-      
+      this.buildProductos()
     )
   }
 
