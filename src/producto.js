@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Axios from 'axios';
+import url from './global';
+
+
 
 class Producto extends React.Component {
   constructor(props){
@@ -14,7 +17,7 @@ class Producto extends React.Component {
 
   deleteProducto(){
     var id = this.state.id;
-    Axios.delete("http://localhost:8090/api/productos/"+id)
+    Axios.delete(url+"/"+id)
     .then(response => {
       console.log(response);
     })

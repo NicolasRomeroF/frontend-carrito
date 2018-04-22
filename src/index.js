@@ -10,9 +10,10 @@ import {
 import Axios from 'axios';
 import ProductoList from './productoList';
 import NameForm from './nameForm';
+import url from './global'
 
 
-const url = 'http://localhost:8081/api/productos'
+
 
 class Test extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Test extends React.Component {
 
   render() {
     return (
-      <div class="centered">
+      <div className="centered">
       <header className="centered">
           <h1 className="App-title">Carrito </h1>
         </header>

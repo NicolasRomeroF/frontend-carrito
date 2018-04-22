@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import axios from 'axios';
-
-const url = 'http://localhost:8081/api/productos'; 
+import url from "./global"
 
 class NameForm extends React.Component {
   constructor(props) {
