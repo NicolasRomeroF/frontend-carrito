@@ -10,9 +10,11 @@ import {
 import Axios from 'axios';
 import ProductoList from './Producto/productoList';
 import ProductoForm from './Producto/productoForm';
-import url from './global'
-import { Button, Panel, FormGroup } from 'react-bootstrap'
-import Header from './header'
+import url from './global';
+import { Button, Panel, FormGroup } from 'react-bootstrap';
+import Header from './header';
+import ProductoEdit from './Producto/productoEdit';
+import GoTo from './Helper/goto';
 
 
 
@@ -48,6 +50,8 @@ class Test extends React.Component {
 
   render() {
     return (
+      <div>
+      <h1>Productos</h1>
       <Panel>
       
       <div className="centered-table">
@@ -68,7 +72,7 @@ class Test extends React.Component {
               Precio
             </th>
             <th>
-              Eliminar
+              Accion
             </th>
           </tr>
           <ProductoList action={this.handler} productos = {this.state.productos} />
@@ -76,11 +80,13 @@ class Test extends React.Component {
         </table>
         </FormGroup>
         <FormGroup>
-          <GoTo name="Añadir" link="/form"/>
+          <GoTo name="Añadir" link="/form" style="primary"/>
           </FormGroup>
 
       </div>
+
       </Panel>
+      </div>
         
       
 )
@@ -92,21 +98,19 @@ class Test extends React.Component {
 class Form extends React.Component {
   render() {
     return (
+      <div>
+
+      <h1>Añadir producto</h1>
         <ProductoForm />
+        </div>
 
       )
   }
 }
 
-class GoTo extends React.Component {
-  render() {
-    return (
-      <Link className="button" role="button" to={this.props.link}> 
-        <Button bsStyle="primary">{this.props.name}</Button>
-      </Link> 
-        )
-  }
-}
+
+
+
 
 
 class App extends React.Component {
@@ -118,7 +122,7 @@ class App extends React.Component {
         <Switch>
 
           <Route path="/form" component={Form} />
-          
+          <Route path="/:id" component={ProductoEdit} />
           <Route path="/" component={Test} />
           
           

@@ -3,6 +3,7 @@ import '../index.css';
 import Axios from 'axios';
 import url from './../global';
 import { Button } from 'react-bootstrap'
+import GoTo from '../Helper/goto';
 
 
 
@@ -44,6 +45,7 @@ class Producto extends React.Component {
           {this.props.price}
         </th>
         <th>
+          <GoTo GoTo name="Editar" link={'/'+this.state.id} style="primary"/>
           <Button bsStyle="danger" onClick = { this.deleteProducto }>Eliminar</Button>
         </th>
       </tr>
