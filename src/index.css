@@ -20,9 +20,24 @@ th {
     height: 50px;
 }
 
-.centered {
+.centered-table {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
 }
