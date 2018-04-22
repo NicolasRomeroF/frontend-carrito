@@ -35,37 +35,41 @@ class Test extends React.Component {
 
   buildProductos(){
 
-}
+  }
 
   componentDidMount(){
     this.fetchProductos()
   }
 
+
   render() {
     return (
-      <div className="centered-table">
-        <header className="centered-table">
-            <h1 className="App-title">Carrito </h1>
-          </header>
-          <table>
-          <tbody>
-            <tr>
-              <th>
-                Nombre
-              </th>
-              <th>
-                Vencimiento
-              </th> 
-              <th>
-                Categoria
-              </th>
-              <th>
-                Precio
-              </th>
-            </tr>
-            <ProductoList productos = {this.state.productos} />
-            </tbody>
-          </table>
+      <div class="centered">
+      <header className="centered">
+          <h1 className="App-title">Carrito </h1>
+        </header>
+        <table>
+        <tbody>
+          <tr>
+            <th>
+              Nombre
+            </th>
+            <th>
+            Vencimiento
+            </th> 
+            <th>
+              Categoria
+            </th>
+            <th>
+              Precio
+            </th>
+            <th>
+              Eliminar
+            </th>
+          </tr>
+          <ProductoList productos = {this.state.productos} />
+          </tbody>
+        </table>
           <Link to="/post" />
       </div>
         
