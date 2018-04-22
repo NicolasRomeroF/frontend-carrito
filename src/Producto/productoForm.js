@@ -90,18 +90,15 @@ class ProductoForm extends React.Component {
           />
 	        
         </FormGroup>
-        <FormGroup>
-	        <ControlLabel>Categoria</ControlLabel>
-	          <FormControl
-            name="category"
-            type="text"
-            value={this.state.category}
-            placeholder="Enter text"
-            onChange={this.handleChange}
-            required
-          />
-	        
-        </FormGroup>
+
+        <FormGroup controlId="formControlsSelect">
+      <ControlLabel>Categoria</ControlLabel>
+      <FormControl name="category" componentClass="select" placeholder="select" onChange={this.handleChange} required>
+        <option value="Nacional">Nacional</option>
+        <option value="Importado">Importado</option>
+      </FormControl>
+    </FormGroup>
+        
         <FormGroup>
 	        <ControlLabel>Precio</ControlLabel>
 	          <FormControl
