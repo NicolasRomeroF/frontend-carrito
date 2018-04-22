@@ -9,8 +9,10 @@ import {
 } from 'react-router-dom';
 import Axios from 'axios';
 import ProductoList from './productoList';
-import NameForm from './nameForm';
+import ProductoForm from './productoForm';
 import url from './global'
+import { Button, Panel, FormGroup } from 'react-bootstrap'
+import Header from './header'
 
 
 
@@ -18,8 +20,10 @@ import url from './global'
 class Test extends React.Component {
   constructor(props) {
     super(props);
+    this.handler = this.handler.bind(this);
     this.state = {
       productos: [],
+      messageShown: false,
     };
   }
 
@@ -34,21 +38,20 @@ class Test extends React.Component {
     })
   }
 
-  buildProductos(){
-
-  }
-
   componentDidMount(){
     this.fetchProductos()
   }
 
+  handler() {
+        this.fetchProductos()
+    }
 
   render() {
     return (
-      <div className="centered">
-      <header className="centered">
-          <h1 className="App-title">Carrito </h1>
-        </header>
+      <Panel>
+      
+      <div className="centered-table">
+      <FormGroup>
         <table>
         <tbody>
           <tr>
@@ -68,11 +71,16 @@ class Test extends React.Component {
               Eliminar
             </th>
           </tr>
-          <ProductoList productos = {this.state.productos} />
+          <ProductoList action={this.handler} productos = {this.state.productos} />
           </tbody>
         </table>
-          <Link to="/post" />
+        </FormGroup>
+        <FormGroup>
+          <GoTo name="Añadir" link="/form"/>
+          </FormGroup>
+
       </div>
+      </Panel>
         
       
 )
@@ -84,9 +92,8 @@ class Test extends React.Component {
 class Form extends React.Component {
   render() {
     return (
-      <div className="centered">
-        <NameForm />
-      </div>
+        <ProductoForm />
+
       )
   }
 }
@@ -94,8 +101,8 @@ class Form extends React.Component {
 class GoTo extends React.Component {
   render() {
     return (
-      <Link className="btn btn-pink" role="button" to={this.props.link}> 
-        {this.props.name}
+      <Link className="button" role="button" to={this.props.link}> 
+        <Button bsStyle="primary">{this.props.name}</Button>
       </Link> 
         )
   }
@@ -105,15 +112,20 @@ class GoTo extends React.Component {
 class App extends React.Component {
   render() {
     return (
+      <div className="centered">
+      <Header/>
       <Router>
         <Switch>
 
           <Route path="/form" component={Form} />
+          
           <Route path="/" component={Test} />
+          
           
         </Switch>
 
       </Router>
+      </div>
     )
   }
 }

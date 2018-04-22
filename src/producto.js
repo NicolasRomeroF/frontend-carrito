@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import Axios from 'axios';
 import url from './global';
+import { Button } from 'react-bootstrap'
 
 
 
@@ -23,7 +23,8 @@ class Producto extends React.Component {
     })
     .catch(function (error) {
       console.log(error)
-    })
+    });
+    this.props.action()
 
   }
 
@@ -43,7 +44,7 @@ class Producto extends React.Component {
           {this.props.price}
         </th>
         <th>
-          <button onClick = { this.deleteProducto }>Eliminar</button>
+          <Button bsStyle="danger" onClick = { this.deleteProducto }>Eliminar</Button>
         </th>
       </tr>
     )

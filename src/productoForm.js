@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import axios from 'axios';
 import url from "./global"
 
-class NameForm extends React.Component {
+class ProductoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,8 +38,6 @@ class NameForm extends React.Component {
     	categoria: this.state.category,
     	precio: this.state.price
     };
-
-    const json = JSON.stringify(producto)
 	var authOptions = {
 	    method: 'POST',
 	    url: url,
@@ -64,31 +61,35 @@ class NameForm extends React.Component {
 
   render() {
     return (
-    	<div className="container">
+    	<div className="form">
       <form onSubmit={this.handleSubmit}>
       	<div>
 	        <label>
 	          Nombre:
+            </label>
 	          <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-	        </label>
+	        
         </div>
         <div>
 	        <label>
 	          Vencimiento:
+            </label>
 	          <input name="expiration" type="date" value={this.state.expiration} onChange={this.handleChange} />
-	        </label>
+	        
         </div>
         <div>
 	        <label>
 	          Categoria:
+            </label>
 	          <input name="category" type="text" value={this.state.category} onChange={this.handleChange} />
-	        </label>
+	        
         </div>
         <div>
 	        <label>
 	          Precio:
+            </label>
 	          <input name="price" type="number" value={this.state.price} onChange={this.handleChange} />
-	        </label>
+	        
         </div>
         <div className="centered">
         	<input type="submit" value="Submit" />
@@ -99,4 +100,4 @@ class NameForm extends React.Component {
   }
 }
 
-export default NameForm;
+export default ProductoForm;

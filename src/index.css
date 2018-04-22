@@ -1,5 +1,5 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 14px "Arial", Futura, sans-serif;
   margin: 20px;
 }
 
@@ -7,9 +7,11 @@ ol, ul {
   padding-left: 30px;
 }
 
-table, th, td {
-   border: 1px solid black;
+th, td {
+    border-bottom: 1px solid #ddd;
 }
+
+tr:hover {background-color: #f5f5f5;}
 
 table {
     width: 100%;
@@ -24,7 +26,7 @@ th {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 80%;
 }
 .centered {
   margin-left: auto;
@@ -32,12 +34,24 @@ th {
   width: 50%;
 }
 
-.container {
-  width: 500px;
-  clear: both;
+label {
+    display: inline-block;
+    width:100%;
+    text-align: left;
+    font:20px "Calibri";
 }
 
-.container input {
-  width: 100%;
+.form {
+  width: 50%;
   clear: both;
+  border: 3px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form input {
+  width: 96%;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
 }
