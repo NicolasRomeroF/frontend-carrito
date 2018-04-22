@@ -8,8 +8,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import Axios from 'axios';
-import ProductoList from './productoList';
-import ProductoForm from './productoForm';
+import ProductoList from './Producto/productoList';
+import ProductoForm from './Producto/productoForm';
 import url from './global'
 import { Button, Panel, FormGroup } from 'react-bootstrap'
 import Header from './header'

@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.css';
+import '../index.css';
 import Axios from 'axios';
-import url from './global';
+import url from './../global';
 import { Button } from 'react-bootstrap'
 
 
